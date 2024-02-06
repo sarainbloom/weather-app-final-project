@@ -52,7 +52,35 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+            <div class="weather-forecast-day">
+              <div class="weather-forecast-date">${day}</div>
+              <img 
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" width="40" 
+              />
+            <div class ="weather-forecast-temperature">
+              <span class="temperature-high">18°</span> |
+              <span class="temperature-low">12°</span>
+              </div>
+            </div> 
+          </div>     
+        `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("San Francisco");
+displayForecast();

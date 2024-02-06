@@ -85,19 +85,24 @@ main {
 }
 
 .weather-forecast {
+  display: flex;
   margin-top: 20px;
+  justify-content: space-around;
 }
 
 .weather-forecast-date {
+  text-align: center;
   color: black;
   font-weight: bold;
 }
 
 .weather-forecast-temperature {
+  text-align: center 
   font-size: 13px;
   color: black;
   opacity: 0.8;
 }
+
 
 .temperature-high {
   color: purple;
